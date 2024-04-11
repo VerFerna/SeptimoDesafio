@@ -1,0 +1,30 @@
+<div style="width: 350px;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div>
+                <b>First Name:</b>
+                {{user.first_name}}
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div>
+                <b>Last Name:</b>
+                {{user.last_name}}
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div>
+                <b>Email:</b>
+                {{user.email}}
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div>
+                <b>Rol:</b>
+                {{user.rol}}
+            </div>
+        </li>
+    </ul>
+    <br>
+    <a class="btn btn-primary" style="width: 100%;" href="/api/v1/sessions/logout">Logout</a>
+</div>
