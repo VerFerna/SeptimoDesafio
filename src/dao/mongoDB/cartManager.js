@@ -9,7 +9,7 @@ class CartManager {
 
       console.log(`Cart created successfully - ${getLocaleTime()}`);
       return theLastCart;
-    } catch (error) {
+    } catch (err) {
       console.log(error);
       return error;
     }
@@ -39,7 +39,7 @@ class CartManager {
         console.error(`Not found Cart - ${getLocaleTime()}`);
         throw new Error("Not found Cart");
       }
-      
+
       return cart;
     } catch (error) {
       throw error;

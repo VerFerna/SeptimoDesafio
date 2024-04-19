@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const url = `mongodb+srv://verferna:verferna123@margaritamaia.4pohsdq.mongodb.net/`;
+const url = `mongodb+srv://verferna:verferna123@margaritamaia.4pohsdq.mongodb.net/?retryWrites=true&w=majority&appName=MargaritaMaia`;
+
 
 mongoose.connect(url);
 

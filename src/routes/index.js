@@ -4,6 +4,7 @@ import cartsRouterFileSystem from "./fileSystem/carts.routes.js";
 import productRouterMongo from "./mongoDB/products.routes.js";
 import cartRouterMongo from "./mongoDB/carts.routes.js";
 import chatRouterMongo from "./mongoDB/chats.routes.js";
+import userRouterMongo from "./mongoDB/users.routes.js";
 import sessionRouterMongo from "./mongoDB/sessions.routes.js";
 
 import productsView from "./views/products.view.js";
@@ -18,6 +19,7 @@ const router = (app) => {
   app.use("/api", productRouterMongo);
   app.use("/api", cartRouterMongo);
   app.use("/api", chatRouterMongo);
+  app.use("/api", userRouterMongo);
   app.use("/api", sessionRouterMongo);
   //Navegador
   app.use("/products", productsView);

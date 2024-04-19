@@ -30,7 +30,7 @@ router.post("/v1/carts/:cid/product/:pid", async (req, res) => {
       res.status(404).json(error.message);
     } else if (error.message.includes("Not found Product")) {
       res.status(404).json(error.message);
-    } else if (err.message.includes("Exceeds available stock")) {
+    } else if (error.message.includes("Exceeds available stock")) {
       res.status(404).json(error.message);
     } else {
       res.status(500).json(error);
@@ -83,7 +83,7 @@ router.delete("/v1/carts/:cid", async (req, res) => {
 
     res.status(200).json(`Cart with id: ${cid} was removed`);
   } catch (error) {
-    if (err.message.includes("Not found")) {
+    if (error.message.includes("Not found")) {
       res.status(404).json(error.message);
     } else {
       res.status(500).json(error);
@@ -99,7 +99,7 @@ router.delete("/v1/carts/:cid/products", async (req, res) => {
 
     res.status(200).json(`Cart with id: ${cid} was emptied`);
   } catch (error) {
-    if (err.message.includes("Not found")) {
+    if (error.message.includes("Not found")) {
       res.status(404).json(error.message);
     } else if (error.message.includes("Cart is already")) {
       res.status(404).json(error.message);
@@ -120,7 +120,7 @@ router.delete("/v1/carts/:cid/products/:pid", async (req, res) => {
     if (error.message.includes("Not found Cart")) {
       res.status(404).json(error.message);
     } else if (error.message.includes("Not found Product")) {
-      res.status(404).json(error.message)
+      res.status(404).json(error.message);
     } else {
       res.status(500).json(error);
     }

@@ -11,9 +11,9 @@ router.get("/realtimeproducts", async (req, res) => {
   const user = req.session.user;
 
   res.render("realtimeproducts", {
-    title: "Matgarita Maia | Products",
+    title: "Margarita Maia | Products",
     products: products,
-    user: user,
+    req: req,
   });
 });
 
@@ -100,11 +100,11 @@ router.get("/", async (req, res) => {
       limit,
     };
 
-    res.render("products", { 
-      title: "AMargarita Maia | Products", 
+    res.render("products", {
+      title: "Margarita Maia | Products",
       result: format,
-      req: req
-     });
+      req: req,
+    });
   } catch (error) {
     res.status(400).json("Bad Request");
   }

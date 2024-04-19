@@ -14,7 +14,7 @@ class ChatManager {
     ChatManager.#path;
   }
 
-  saveMessage = async ({user, message, hour}) => {
+  saveMessage = async ({ user, message, hour }) => {
     try {
       const fileExist = fs.existsSync(ChatManager.#path);
 

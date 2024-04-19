@@ -42,7 +42,7 @@ export default function socketioHandler(httpServer) {
         );
 
         io.emit("server:list", listProducts);
-      } catch (error) {
+      } catch (err) {
         io.emit("server:error", err.message);
       }
     });
@@ -63,7 +63,7 @@ export default function socketioHandler(httpServer) {
         ); //Solo para mostrar los productos con status true
         io.emit("server:list", listProducts);
       } catch (error) {
-        io.emit("server:error", err.message);
+        io.emit("server:error", error.message);
       }
     });
 
@@ -81,7 +81,7 @@ export default function socketioHandler(httpServer) {
         //Envia el back
         const cart = await cartManager.getCartById(cid);
         io.emit("server:cart", cart);
-      } catch (error) {
+      } catch (err) {
         io.emit("server:error", err.message);
       }
     });
@@ -91,7 +91,7 @@ export default function socketioHandler(httpServer) {
       try {
         const cid = "65fb8308f303ee5626d8e88f";
         const pid = data.id;
-        const quantity = data.selectedQuantity > 1 ? data.selectedQuantity : 1
+        const quantity = data.selectedQuantity > 1 ? data.selectedQuantity : 1;
 
         const addProductOnCart = await cartManager.updateCart(
           cid,

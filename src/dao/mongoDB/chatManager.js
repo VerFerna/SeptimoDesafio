@@ -9,9 +9,9 @@ class ChatManager {
 
       console.log(`Message saved - ${getLocaleTime()}`);
       return true;
-    } catch (err) {
-      console.log(err);
-      return err;
+    } catch (error) {
+      console.log(error);
+      return error;
     }
   };
 
@@ -20,7 +20,7 @@ class ChatManager {
       const messages = await MessageModel.find();
 
       return messages;
-    } catch (err) {
+    } catch (error) {
       console.log(`No messages - ${getLocaleTime()}`);
       return [];
     }
@@ -48,8 +48,8 @@ class ChatManager {
       }
 
       return newChat;
-    } catch (err) {
-      throw err;
+    } catch (error) {
+      throw error;
     }
   };
 }

@@ -97,7 +97,7 @@ router.put("/v2/products/:pid", async (req, res) => {
 
 router.delete("/v2/products/physical/:pid", async (req, res) => {
   const { pid } = req.params;
-  
+
   try {
     let status = await productManager.deleteProduct(pid);
 

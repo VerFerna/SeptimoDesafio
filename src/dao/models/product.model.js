@@ -3,7 +3,7 @@ import mongoosePaginate from "mongoose-paginate-v2";
 
 const productsCollection = "products";
 
-const enumCategories = ["DAMAS", "CABALLEROS", "NIÑOS"];
+const enumCategories = ["DAMAS", "CABALLEROS", "KIDS"];
 
 const productSchema = new mongoose.Schema({
   title: { type: String, required: true },

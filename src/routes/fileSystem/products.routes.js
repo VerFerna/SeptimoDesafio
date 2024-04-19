@@ -23,7 +23,7 @@ router.post("/v1/products", async (req, res) => {
   } catch (error) {
     if (error.message.includes("All fields")) {
       res.status(400).json(error.message);
-    } else if (err.message.includes("Product with")) {
+    } else if (error.message.includes("Product with")) {
       res.status(400).json(error.message);
     } else {
       res.status(500).json(error);
@@ -60,7 +60,7 @@ router.get("/v1/products/:pid", async (req, res) => {
 
     res.status(200).json(product);
   } catch (error) {
-    if (error.message.includes("Not found")) {
+    if (err.message.includes("Not found")) {
       res.status(404).json(error.message);
     } else {
       res.status(500).json(error);
@@ -98,7 +98,7 @@ router.delete("/v1/products/physical/:pid", async (req, res) => {
 
     res.status(200).json(`Product with id: ${pid} was removed`);
   } catch (error) {
-    if (err.message.includes("Not found")) {
+    if (error.message.includes("Not found")) {
       res.status(404).json(error.message);
     } else {
       res.status(500).json(error);

@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 import { ProductModel } from "../models/product.model.js";
 import { getLocaleTime } from "../../helpers/utils.js";
 

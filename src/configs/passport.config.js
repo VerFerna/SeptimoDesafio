@@ -2,7 +2,6 @@ import passport from "passport";
 import local from "passport-local";
 import github from "passport-github2";
 import google from "passport-google-oauth20";
-import dotenv from "dotenv";
 import { UserModel } from "../dao/models/user.model.js";
 import {
   createHash,
@@ -10,8 +9,6 @@ import {
   serializeUser,
   deserializeUser,
 } from "../helpers/utils.js";
-
-dotenv.config();
 
 const LocalStrategy = local.Strategy;
 const GitHubStrategy = github.Strategy;
@@ -46,8 +43,8 @@ export const initializePassport = () => {
 
           console.log("desde passport", newUser.email, newUser.password);
 
-          if (newUser.email === "adminCoder@coder.com") {
-            newUser.rol = "admin";
+          if (newUser.email === "verferna@admin.com") {
+            newUser.rol = "adminVF123";
           }
 
           const result = await UserModel.create(newUser);
@@ -90,9 +87,9 @@ export const initializePassport = () => {
     "github",
     new GitHubStrategy(
       {
-        clientID: process.env.CLIENT_GITHUB_ID,
-        clientSecret: process.env.CLIENT_GITHUB_SECRET,
-        callbackURL: process.env.GITHUB_CALLBACK,
+        clientID: "Iv1.ef5295edc776645e",
+        clientSecret: "a32f87a635273d0a0d3a52ce821ebb06abba3d8e",
+        callbackURL: "http://localhost:8080/api/sessions/githubcallback",
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
@@ -130,9 +127,9 @@ export const initializePassport = () => {
     "google",
     new GoogleStrategy(
       {
-        clientID: process.env.CLIENT_GOOGLE_ID,
-        clientSecret: process.env.CLIENT_GOOGLE_SECRET,
-        callbackURL: process.env.GOOGLE_CALLBACK,
+        clientID: "84277374591-18jhbssf9g5nhe22lfromull0j0qh9dt.apps.googleusercontent.com",
+        clientSecret: "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",
+        callbackURL: "http://localhost:8080/auth/google",
       },
       async (accessToken, refreshToken, profile, cb) => {
         try {

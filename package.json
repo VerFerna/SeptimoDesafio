@@ -1,15 +1,15 @@
 {
-  "name": "margaritamaia",
+  "name": "coderhouse_backend",
   "version": "1.0.0",
-  "description": "Septimo Desafio",
-  "main": "productManager.js",
+  "description": "Proyecto final",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
-  "author": "Verushka Fernandez",
+  "author": "JEmperador",
   "license": "ISC",
   "devDependencies": {
     "bcrypt": "^5.1.1",

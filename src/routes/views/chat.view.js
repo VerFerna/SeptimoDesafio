@@ -7,9 +7,9 @@ const chatManager = new ChatManager();
 router.get("/", async (req, res) => {
   const messages = await chatManager.getMessages();
   res.render("chat", {
-    title: "Margarita Maia | Chat", 
-    messages: messages, 
-    req: req
+    title: "Margarita Maia | Chat",
+    messages: messages,
+    req: req,
   });
 });
 

@@ -52,9 +52,9 @@ router.put("/v2/chats/:mid", async (req, res) => {
   } catch (error) {
     if (err.message.includes("Invalid message")) {
       res.status(404).json(error.message);
-    } else if (err.message.includes("Message cannot")) {
+    } else if (error.message.includes("Message cannot")) {
       res.status(404).json(error.message);
-    } else if (err.message.includes("Not found")) {
+    } else if (error.message.includes("Not found")) {
       res.status(400).json(error.message);
     } else {
       res.status(500).json(error);

@@ -39,7 +39,7 @@ export const deserializeUser = async (id, done) => {
   done(null, user);
 }
 
-//Clases con FS
+//FS
 export function getNextId(path) {
   const data = fs.readFileSync(path);
   const products = JSON.parse(data);
@@ -50,7 +50,6 @@ export function getNextId(path) {
   return nextId;
 }
 
-//FS
 export async function createFile(path) {
   try {
     await fs.promises.access(path);
