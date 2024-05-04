@@ -2,6 +2,7 @@ import { Server } from "socket.io";
 import ProductManager from "../dao/mongoDB/productManager.js";
 import CartManager from "../dao/mongoDB/cartManager.js";
 import ChatManager from "../dao/mongoDB/chatManager.js";
+
 const productManager = new ProductManager();
 const cartManager = new CartManager();
 const chatManager = new ChatManager();
@@ -70,9 +71,7 @@ export default function socketioHandler(httpServer) {
     //Recibe del front - Eliminacion de producto (en carrito)
     socket.on("client:deleteProductOnCart", async (data) => {
       try {
-        const cid = "65fb8308f303ee5626d8e88f";
-        const pid = data;
-
+        const { cid, pid } = data; // Recibir cid y pid desde el cliente
         const deleteProductOnCart = await cartManager.deleteProductById(
           cid,
           pid
@@ -89,9 +88,8 @@ export default function socketioHandler(httpServer) {
     //Recibe del front - Incorporacion de producto (en carrito)
     socket.on("client:addProductOnCart", async (data) => {
       try {
-        const cid = "65fb8308f303ee5626d8e88f";
-        const pid = data.id;
-        const quantity = data.selectedQuantity > 1 ? data.selectedQuantity : 1;
+        const { cid, id: pid, selectedQuantity } = data; // Recibir cid, pid y selectedQuantity desde el cliente
+        const quantity = selectedQuantity > 1 ? selectedQuantity : 1;
 
         const addProductOnCart = await cartManager.updateCart(
           cid,

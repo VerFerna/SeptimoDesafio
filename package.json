@@ -1,7 +1,7 @@
 {
   "name": "coderhouse_backend",
   "version": "1.0.0",
-  "description": "Proyecto final",
+  "description": "Septimo Desafio",
   "main": "app.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
-  "author": "JEmperador",
+  "author": "Verushka Fernandez",
   "license": "ISC",
   "devDependencies": {
     "bcrypt": "^5.1.1",

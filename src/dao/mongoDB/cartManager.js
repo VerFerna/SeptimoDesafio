@@ -3,13 +3,13 @@ import { CartModel } from "../models/cart.model.js";
 import { getLocaleTime } from "../../helpers/utils.js";
 
 class CartManager {
-  createCart = async (cart) => {
+  createCart = async (carts) => {
     try {
       const theLastCart = await CartModel.create(cart);
 
       console.log(`Cart created successfully - ${getLocaleTime()}`);
       return theLastCart;
-    } catch (err) {
+    } catch (error) {
       console.log(error);
       return error;
     }

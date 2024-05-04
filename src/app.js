@@ -29,7 +29,7 @@ app.use(passport.session());
 router(app);
 
 app.get("/", (req, res) => {
-  res.render("login", { title: "Atlas Tech" });
+  res.render("login", { title: "Margarita Maia" });
 });
 
 const httpServer = app.listen(PORT, () => {
